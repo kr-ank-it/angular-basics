@@ -1,0 +1,23 @@
+.btn {
+  width: 80px;
+  height: 80px;
+  margin: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: aliceblue;
+}
+
+.btn:hover {
+  border-color: white;
+}
+
+.btn-black{
+  background-color: black;
+}
+
+.btn-red{
+  background-color: red;
+}
+.btn-green{
+  background-color: green;
+}
