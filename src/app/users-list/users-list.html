@@ -1,0 +1,15 @@
+<h1>List of all Users</h1>
+
+<ul>
+
+  @for (user of users; track user.id) {
+    <li>
+      <a routerLink="/userdetails/{{user.id}}/{{user.name}}/{{user.email}}">
+        <span> {{user.id}}</span>
+        <span> {{user.name}}</span>
+        <span> {{user.email}}</span>
+      </a>
+    </li>
+  }
+
+</ul>

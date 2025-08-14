@@ -1,12 +1,12 @@
 import {Component, effect, signal} from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {RouterLink, RouterOutlet} from '@angular/router';
 import {Login} from './login/login';
 import {FormsModule} from '@angular/forms';
-import {NgFor} from '@angular/common';
+import {HomeToolbar} from './home-toolbar/home-toolbar';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Login, FormsModule],
+  imports: [RouterOutlet, Login, FormsModule, RouterOutlet, RouterLink, HomeToolbar],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

@@ -1,49 +1,53 @@
 <h1> Counter Application </h1>
 
-<div style="text-align: center;">
+<!--<div style="text-align: center;">-->
 
-  <h2>Counter: {{ counter() }}</h2>
-  <button class="btn btn-red" (click)="decrement()">Decrement</button>
-  <button class="btn btn-black" (click)="reset()">Reset</button>
-  <button class="btn btn-green" (click)="increment()">Increment</button>
+<!--  <h2>Counter: {{ counter() }}</h2>-->
+<!--  <button class="btn btn-red" (click)="decrement()">Decrement</button>-->
+<!--  <button class="btn btn-black" (click)="reset()">Reset</button>-->
+<!--  <button class="btn btn-green" (click)="increment()">Increment</button>-->
 
-</div>
+<!--</div>-->
 
-<br>
-<br>
+<!--<br>-->
+<!--<br>-->
 
-<input placeholder="Enter name" (input)="handleInputPress($event)" >
-<br>
-<hr>
+<!--<input placeholder="Enter name" (input)="handleInputPress($event)" >-->
+<!--<br>-->
+<!--<hr>-->
 
-<input placeholder="Enter email" (input)="handleEmailPress(emailInput.value)" #emailInput>
+<!--<input placeholder="Enter email" (input)="handleEmailPress(emailInput.value)" #emailInput>-->
 
-<hr>
+<!--<hr>-->
 
-@if(counter() < 0){
-  <div style="background-color: aqua; width:100px; height:100px">
-  </div>
-} @else if (counter() == 0) {
-  <div style="background-color: green; width:100px; height:100px">
-  </div>
-} @else {
-  <div style="background-color: blue; width:100px; height:100px">
-  </div>
-}
+<!--@if(counter() < 0){-->
+<!--  <div style="background-color: aqua; width:100px; height:100px">-->
+<!--  </div>-->
+<!--} @else if (counter() == 0) {-->
+<!--  <div style="background-color: green; width:100px; height:100px">-->
+<!--  </div>-->
+<!--} @else {-->
+<!--  <div style="background-color: blue; width:100px; height:100px">-->
+<!--  </div>-->
+<!--}-->
 
-<hr>
+<!--<hr>-->
 
-<input type="text" [(ngModel)]="taskName" placeholder="Enter task">
-<button (click)="createTask()"> Add task </button>
-<ul>
-  @for(task of taskList; track task.id) {
-    <li>
-      <span>{{ task.id }}</span>
-      <span>{{ task.name }}</span>
+<!--<input type="text" [(ngModel)]="taskName" placeholder="Enter task">-->
+<!--<button (click)="createTask()"> Add task </button>-->
+<!--<ul>-->
+<!--  @for(task of taskList; track task.id) {-->
+<!--    <li>-->
+<!--      <span>{{ task.id }}</span>-->
+<!--      <span>{{ task.name }}</span>-->
 
-      <button class="btn btn-red" (click)="removeTask(task.id)">Remove</button>
-    </li>
-  }
-</ul>
+<!--      <button class="btn btn-red" (click)="removeTask(task.id)">Remove</button>-->
+<!--    </li>-->
+<!--  }-->
+<!--</ul>-->
+
+
+<app-home-toolbar></app-home-toolbar>
+<router-outlet></router-outlet>
 
 
