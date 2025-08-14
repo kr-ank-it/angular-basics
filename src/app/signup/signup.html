@@ -1,1 +1,39 @@
-<h1> Routed to signup </h1>
+<h1> Welcome to Sign-up page </h1>
+
+<form type="post" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="username">Username</label>
+    <br>
+    <input type="text" id="username" name="username" placeholder="Enter username" formControlName="username">
+    @if(username?.invalid && username?.dirty) {
+      <span class="error">Please enter valid Username</span>
+    }
+    @if(username?.hasError('required')) {
+      <span class="error">Username is required</span>
+    }
+
+    <span></span>
+  </div>
+
+  <div>
+    <label for="email">Email</label>
+    <br>
+    <input type="email" id="email" name="email" placeholder="Enter email" formControlName="email">
+    @if(email?.invalid && email?.dirty) {
+      <span class="error">Please enter valid email</span>
+    }
+    @if(email?.hasError('required')) {
+      <span class="error">Email is required</span>
+    }
+  </div>
+  <div>
+    <label for="password">Password</label>
+    <br>
+    <input type="password" id="password" name="password" placeholder="Choose password" formControlName = "password">
+  </div>
+
+  <button type="submit">Sign Up</button>
+</form>
+
+<h3> {{username?.value}}</h3>
+<h3> {{email?.value}}</h3>
