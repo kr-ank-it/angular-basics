@@ -3,10 +3,13 @@ import {RouterLink, RouterOutlet} from '@angular/router';
 import {Login} from './login/login';
 import {FormsModule} from '@angular/forms';
 import {HomeToolbar} from './home-toolbar/home-toolbar';
+import {Home} from './home/home';
+import {UserDetails} from './user-details/user-details';
+import {User} from './user/user';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Login, FormsModule, RouterOutlet, RouterLink, HomeToolbar],
+  imports: [RouterOutlet, Login, FormsModule, RouterOutlet, RouterLink, HomeToolbar, Home, UserDetails, User],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -63,4 +66,7 @@ export class App {
 
   }
 
+  handleSubmit(value: string, value2: string) {
+    return;
+  }
 }

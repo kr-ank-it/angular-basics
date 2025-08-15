@@ -1,1 +1,35 @@
-<h1>Routed to Login</h1>
+<h1>Template driven Form</h1>
+
+<form #formModel="ngForm" (ngSubmit)="onSubmit(formModel.value)">
+
+  <input #name="ngModel" required value="" name="username" ngModel placeholder="Enter username">
+  @if(name.untouched) {
+    <span class="error">*</span>
+  }
+  @if(name.invalid && name.touched) {
+    <span class="error">Please enter valid Username</span>
+  }
+  <br><br>
+  <input email type="email" #email="ngModel" required value="" name="email" ngModel placeholder="Enter email">
+  @if(email.untouched) {
+    <span class="error">*</span>
+  }
+  @if(email.invalid && email.touched) {
+    <span class="error">Please enter valid Email</span>
+  }
+  <br><br>
+  <select name="select" ngModel>
+    <option value="First">Option 1</option>
+    <option value="Second">Option 2</option>
+    <option value="Third">Option 3</option>
+  </select>
+<!--  <Select ngModel name="select">-->
+<!--    <option value="First">Option 1</option>-->
+<!--    <option value="Second">Option 2</option>-->
+<!--    <option value="Third">Option 3</option>-->
+<!--  </Select>-->
+  <br><br>
+  <input type="range" name="range" ngModel placeholder="Enter range" min="0" max="100">
+  <br><br>
+  <button [disabled]="formModel.invalid" type="submit">Submit</button>
+</form>
