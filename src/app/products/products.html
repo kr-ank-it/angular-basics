@@ -1,0 +1,24 @@
+<h2>Showing Products!</h2>
+
+<ul>
+  @for(product of products; track product.id) {
+    <li>
+      <span>{{ product.category }}</span>
+      <span>{{ product.title }}</span>
+      <span>{{ product.price | currency:'USD':'symbol' }}</span>
+    </li>
+  }
+</ul>
+
+@for(comment of comments; track comment.id){
+  <ul>
+
+    <li>
+      <span>{{ comment.body }}</span>
+      <span>{{ comment.likes }}</span>
+      <span>{{ comment.user.fullName }}</span>
+    </li>
+
+  </ul>
+
+}

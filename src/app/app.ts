@@ -6,10 +6,11 @@ import {HomeToolbar} from './home-toolbar/home-toolbar';
 import {Home} from './home/home';
 import {UserDetails} from './user-details/user-details';
 import {User} from './user/user';
+import {Posts} from './posts/posts';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Login, FormsModule, RouterOutlet, RouterLink, HomeToolbar, Home, UserDetails, User],
+  imports: [RouterOutlet, Login, FormsModule, RouterOutlet, RouterLink, HomeToolbar, Home, UserDetails, User, Posts],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -21,6 +22,9 @@ export class App {
   inputValue: string = '';
   taskName: string = '';
   taskList: {id:number, name:string}[]=[];
+  username: string='';
+  useremail: string='';
+  posts: any[] = [];
 
   constructor() {
     effect(() => {
@@ -63,10 +67,15 @@ export class App {
 
   removeTask(taskId: number) {
     this.taskList = this.taskList.filter(task => task.id !== taskId);
-
   }
 
-  handleSubmit(value: string, value2: string) {
-    return;
+  handleSubmit(username: string, useremail: string) {
+    this.username= username;
+    this.useremail= useremail;
+  }
+
+  getPosts(posts: any){
+    // console.log(posts);
+    this.posts = posts;
   }
 }

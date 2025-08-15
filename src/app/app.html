@@ -46,15 +46,23 @@
 <!--  }-->
 <!--</ul>-->
 
-<form>
-  <input type="text"  placeholder="Enter name">
-  <input type="text"  placeholder="Enter email">
+<!--<form>-->
+<!--  <input type="text" #username placeholder="Enter name">-->
+<!--  <input type="text"  #useremail placeholder="Enter email">-->
 <!--  <button (click)="handleSubmit(username.value, useremail.value)">Submit</button>-->
-</form>
+<!--</form>-->
 
-<app-user username="Ankit"  useremail="email"> </app-user>
+<!--<app-user [username]='username.value'  [useremail]='useremail.value'> </app-user>-->
 
 <app-home-toolbar></app-home-toolbar>
 <router-outlet></router-outlet>
 
+<!--<h2> Child to Parent Data Transfer</h2>-->
+<!--<app-posts (fetchPosts)="getPosts($event)"></app-posts>-->
 
+<!--@for(post of posts; track post.id) {-->
+<!--  <div class="post">-->
+<!--    <h3>{{ post.title }}</h3>-->
+<!--    <p>{{ post.content }}</p>-->
+<!--  </div>-->
+<!--}-->

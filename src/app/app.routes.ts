@@ -7,6 +7,7 @@ import {Home} from './home/home';
 import {Profile} from './profile/profile';
 import {UsersList} from './users-list/users-list';
 import {UserDetails} from './user-details/user-details';
+import {Products} from './products/products';
 
 export const routes: Routes = [
   {path: '', component:Home },
@@ -15,5 +16,6 @@ export const routes: Routes = [
   {path:'profile', component:Profile},
   {path:'userslist', component:UsersList},
   {path:'userdetails/:id/:name/:email', component:UserDetails},
+  {path:'products', component:Products},
   {path:'**', component:PageNotFound}
 ];
