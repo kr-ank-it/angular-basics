@@ -1,27 +1,29 @@
 import { Component } from '@angular/core';
 import {Productservice} from '../services/productservice';
-import {CurrencyPipe} from '@angular/common';
+import {CurrencyPipe, DatePipe} from '@angular/common';
 import {Commentsservice} from '../services/commentsservice';
 import {Comments} from '../interfaces/comments';
+import {Product} from '../interfaces/Product';
 
 @Component({
   selector: 'app-products',
   imports: [
-    CurrencyPipe
+    CurrencyPipe,
+    DatePipe
   ],
   templateUrl: './products.html',
   styleUrl: './products.css'
 })
 export class Products {
   comments:Comments[]=[];
-  products:any;
+  products:Product[] = [];
   constructor(private productService: Productservice,
               private commentsService:Commentsservice) {
   }
   ngOnInit() {
-    this.productService.getAllProducts().subscribe((response:any)=>{
+    this.productService.getAllProducts().subscribe((response:Product[])=>{
       // console.log(response.products);
-      this.products = response.products || []; // Ensure products is an array
+      this.products = response || []; // Ensure products is an array
     });
 
     this.commentsService.getAllComments().subscribe((response:{comments:Comments[]})=> {

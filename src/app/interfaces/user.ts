@@ -3,3 +3,9 @@ export interface User {
   username: string,
   fullName: string
 }
+
+export interface UserDetails {
+  name: string,
+  email: string,
+  password: string,
+}

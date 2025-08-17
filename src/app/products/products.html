@@ -3,22 +3,25 @@
 <ul>
   @for(product of products; track product.id) {
     <li>
-      <span>{{ product.category }}</span>
       <span>{{ product.title }}</span>
-      <span>{{ product.price | currency:'USD':'symbol' }}</span>
+      <br> <br>
+      <span>{{ product.description }}</span>
+      <br> <br>
+      <span>{{ product.createdAt | date}}</span>
+      <br> <br>
     </li>
   }
 </ul>
 
-@for(comment of comments; track comment.id){
-  <ul>
+<!--@for(comment of comments; track comment.id){-->
+<!--  <ul>-->
 
-    <li>
-      <span>{{ comment.body }}</span>
-      <span>{{ comment.likes }}</span>
-      <span>{{ comment.user.fullName }}</span>
-    </li>
+<!--    <li>-->
+<!--      <span>{{ comment.body }}</span>-->
+<!--      <span>{{ comment.likes }}</span>-->
+<!--      <span>{{ comment.user.fullName }}</span>-->
+<!--    </li>-->
 
-  </ul>
+<!--  </ul>-->
 
-}
+<!--}-->

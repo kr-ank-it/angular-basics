@@ -2,13 +2,13 @@
 
 <form type="post" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
   <div>
-    <label for="username">Username</label>
+    <label for="name">Username</label>
     <br>
-    <input type="text" id="username" name="username" placeholder="Enter username" formControlName="username">
-    @if(username?.invalid && username?.dirty) {
+    <input type="text" id="name" name="name" placeholder="Enter username" formControlName="name">
+    @if(name?.invalid && name?.dirty) {
       <span class="error">Please enter valid Username</span>
     }
-    @if(username?.hasError('required')) {
+    @if(name?.hasError('required')) {
       <span class="error">Username is required</span>
     }
 
@@ -35,5 +35,5 @@
   <button type="submit">Sign Up</button>
 </form>
 
-<h3> {{username?.value}}</h3>
+<h3> {{name?.value}}</h3>
 <h3> {{email?.value}}</h3>
